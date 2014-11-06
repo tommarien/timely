@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>timely</id>
+        <version>$version$</version>
+        <title>Timely</title>
+        <authors>Tom Marien (@Tom_Marien)</authors>
+        <projectUrl>https://github.com/tommarien/zenini</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Interval, period helper library</description>
+	    <tags>time interval period</tags>
+    </metadata>
+	<files>
+	  <file src="bin\$configuration$\$id$.dll" target="lib\net40\" />	
+	  <file src="bin\$configuration$\$id$.pdb" target="lib\net40\" />
+	</files>
+</package>
