@@ -5,7 +5,7 @@
         <version>$version$</version>
         <title>Timely</title>
         <authors>Tom Marien (@Tom_Marien)</authors>
-        <projectUrl>https://github.com/tommarien/zenini</projectUrl>
+        <projectUrl>https://github.com/tommarien/timely</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Interval, period helper library</description>
 	    <tags>time interval period</tags>
