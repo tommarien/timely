@@ -4,14 +4,14 @@ using Shouldly;
 namespace Timely.Tests
 {
     [TestFixture]
-    public class When_converting_period_to_human_readable_string
+    public class When_converting_to_readable_string
     {
         [Test]
         public void it_converts_the_amount_of_days_to_human_readable_format()
         {
             var oneDay = new Period(1, 0, 0, 0, 0);
 
-            oneDay.ToHumanReadableString().ShouldBe("1d");
+            oneDay.ToString().ShouldBe("1d");
         }
 
         [Test]
@@ -19,7 +19,7 @@ namespace Timely.Tests
         {
             var aPeriodOf24Hours = new Period(0, 24, 0, 0, 0);
 
-            aPeriodOf24Hours.ToHumanReadableString().ShouldBe("24h");
+            aPeriodOf24Hours.ToString().ShouldBe("24h");
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace Timely.Tests
         {
             var thirtyMinutes = new Period(0, 0, 0, 0, 1500);
 
-            thirtyMinutes.ToHumanReadableString().ShouldBe("1500ms");
+            thirtyMinutes.ToString().ShouldBe("1500ms");
         }
 
         [Test]
@@ -35,7 +35,7 @@ namespace Timely.Tests
         {
             var thirtyMinutes = new Period(0, 0, 30, 0, 0);
 
-            thirtyMinutes.ToHumanReadableString().ShouldBe("30m");
+            thirtyMinutes.ToString().ShouldBe("30m");
         }
 
         [Test]
@@ -43,7 +43,7 @@ namespace Timely.Tests
         {
             var thirtyMinutes = new Period(0, 0, 0, 30, 0);
 
-            thirtyMinutes.ToHumanReadableString().ShouldBe("30s");
+            thirtyMinutes.ToString().ShouldBe("30s");
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace Timely.Tests
         {
             var period = new Period(20, 12, 0, 50, 0);
 
-            period.ToHumanReadableString().ShouldBe("20d 12h 50s");
+            period.ToString().ShouldBe("20d 12h 50s");
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace Timely.Tests
         {
             Period emptyPeriod = Period.Empty();
 
-            emptyPeriod.ToHumanReadableString().ShouldBe("Empty");
+            emptyPeriod.ToString().ShouldBe("Empty");
         }
     }
 }

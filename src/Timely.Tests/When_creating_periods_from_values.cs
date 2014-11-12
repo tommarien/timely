@@ -4,46 +4,46 @@ using Shouldly;
 namespace Timely.Tests
 {
     [TestFixture]
-    public class When_creating_a_period
+    public class When_creating_periods_from_values
     {
         [Test]
         public void it_retains_the_amount_of_days()
         {
-            var period = new Period(1, 0, 0, 0, 0);
+            Period period = 1000.Days();
 
-            period.Days.ShouldBe(1);
+            period.Days.ShouldBe(1000);
         }
 
         [Test]
         public void it_retains_the_amount_of_hours()
         {
-            var period = new Period(0, 10, 0, 0, 0);
+            Period period = 1000.Hours();
 
-            period.Hours.ShouldBe(10);
+            period.Hours.ShouldBe(1000);
         }
 
         [Test]
         public void it_retains_the_amount_of_milliseconds()
         {
-            var period = new Period(0, 0, 0, 0, 595);
+            Period period = 1000.Milliseconds();
 
-            period.Milliseconds.ShouldBe(595);
+            period.Milliseconds.ShouldBe(1000);
         }
 
         [Test]
         public void it_retains_the_amount_of_minutes()
         {
-            var period = new Period(0, 0, 30, 0, 0);
+            Period period = 1000.Minutes();
 
-            period.Minutes.ShouldBe(30);
+            period.Minutes.ShouldBe(1000);
         }
 
         [Test]
         public void it_retains_the_amount_of_seconds()
         {
-            var period = new Period(0, 0, 0, 45, 0);
+            Period period = 1000.Seconds();
 
-            period.Seconds.ShouldBe(45);
+            period.Seconds.ShouldBe(1000);
         }
     }
 }

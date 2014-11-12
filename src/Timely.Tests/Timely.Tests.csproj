@@ -48,9 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="When_converting_period_to_human_readable_string.cs" />
+    <Compile Include="When_converting_to_readable_string.cs" />
+    <Compile Include="When_converting_to_timespan.cs" />
     <Compile Include="When_creating_a_period.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="When_creating_periods_from_values.cs" />
+    <Compile Include="When_normalizing_a_period.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Timely\Timely.csproj">
