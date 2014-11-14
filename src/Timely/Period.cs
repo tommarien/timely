@@ -13,31 +13,28 @@ namespace Timely
         private const int MinutePerHour = SecondsPerMinute;
         private const int HoursPerDay = 24;
 
-        public Period(int days, int hours, int minutes, int seconds, int milliseconds, bool isNegative = false)
+        public Period(int days, int hours, int minutes, int seconds, int milliseconds)
         {
             if (days < 0)
-                throw new ArgumentOutOfRangeException("days", "Days should be a positive integer, you can use negate if you want it to be negative");
+                throw new ArgumentOutOfRangeException("days", "Days should be a positive integer");
 
             if (hours < 0)
-                throw new ArgumentOutOfRangeException("hours", "Hours should be a positive integer, you can use negate if you want it to be negative");
+                throw new ArgumentOutOfRangeException("hours", "Hours should be a positive integer");
 
             if (minutes < 0)
-                throw new ArgumentOutOfRangeException("minutes", "Minutes should be a positive integer, you can use negate if you want it to be negative");
+                throw new ArgumentOutOfRangeException("minutes", "Minutes should be a positive integer");
 
             if (seconds < 0)
-                throw new ArgumentOutOfRangeException("seconds", "Seconds should be a positive integer, you can use negate if you want it to be negative");
+                throw new ArgumentOutOfRangeException("seconds", "Seconds should be a positive integer");
 
             if (milliseconds < 0)
-                throw new ArgumentOutOfRangeException("milliseconds",
-                    "Milliseconds should be a positive integer, you can use negate if you want it to be negative");
+                throw new ArgumentOutOfRangeException("milliseconds", "Milliseconds should be a positive integer");
 
             Days = days;
             Hours = hours;
             Minutes = minutes;
             Seconds = seconds;
             Milliseconds = milliseconds;
-
-            IsNegative = isNegative;
         }
 
         public int Days { get; private set; }
@@ -45,7 +42,6 @@ namespace Timely
         public int Minutes { get; private set; }
         public int Seconds { get; private set; }
         public int Milliseconds { get; private set; }
-        public bool IsNegative { get; private set; }
 
         public bool Equals(Period other)
         {
@@ -119,7 +115,7 @@ namespace Timely
 
         private IStructuralEquatable GetStructuralEquatable()
         {
-            return Tuple.Create(IsNegative, Days, Hours, Minutes, Seconds, Milliseconds);
+            return Tuple.Create(Days, Hours, Minutes, Seconds, Milliseconds);
         }
 
         public static Period Empty()
