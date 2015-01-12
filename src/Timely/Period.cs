@@ -124,5 +124,15 @@ namespace Timely
         {
             return new TimeSpan(Days, Hours, Minutes, Seconds, Milliseconds);
         }
+
+        public static bool operator ==(Period left, Period right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(Period left, Period right)
+        {
+            return !Equals(left, right);
+        }
     }
 }
