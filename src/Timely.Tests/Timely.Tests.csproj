@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="When_checking_for_equality.cs" />
     <Compile Include="When_converting_to_readable_string.cs" />
     <Compile Include="When_converting_to_timespan.cs" />
     <Compile Include="When_creating_a_period.cs" />

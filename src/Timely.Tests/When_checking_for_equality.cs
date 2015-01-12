@@ -7,6 +7,15 @@ namespace Timely.Tests
     public class When_checking_for_equality
     {
         [Test]
+        public void it_behaves_correctly_with_equal_values()
+        {
+            var period1 = 1000.Milliseconds();
+            var period2 = 1.Seconds();
+
+            period1.ShouldBe(period2);
+        }
+
+        [Test]
         public void it_is_instance_independent()
         {
             var period1 = 10.Milliseconds();

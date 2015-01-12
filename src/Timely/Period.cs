@@ -50,7 +50,8 @@ namespace Timely
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
 
-            return GetStructuralEquatable().Equals(other.GetStructuralEquatable());
+            return Normalize().GetStructuralEquatable()
+                .Equals(other.Normalize().GetStructuralEquatable());
         }
 
         public override bool Equals(object obj)
@@ -78,16 +79,16 @@ namespace Timely
             int hours = Hours;
             int days = Days;
 
-            if (milliseconds > MillisecondsPerSecond)
+            if (milliseconds >= MillisecondsPerSecond)
                 seconds += Math.DivRem(milliseconds, MillisecondsPerSecond, out milliseconds);
 
-            if (seconds > SecondsPerMinute)
+            if (seconds >= SecondsPerMinute)
                 minutes += Math.DivRem(seconds, SecondsPerMinute, out seconds);
 
-            if (minutes > MinutePerHour)
+            if (minutes >= MinutePerHour)
                 hours += Math.DivRem(minutes, MinutePerHour, out minutes);
 
-            if (hours > HoursPerDay)
+            if (hours >= HoursPerDay)
                 days += Math.DivRem(hours, HoursPerDay, out hours);
 
             return new Period(days, hours, minutes, seconds, milliseconds);
