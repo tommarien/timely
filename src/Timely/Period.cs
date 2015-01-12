@@ -13,6 +13,8 @@ namespace Timely
         private const int MinutePerHour = SecondsPerMinute;
         private const int HoursPerDay = 24;
 
+        public static readonly Period Empty = new Period(0, 0, 0, 0, 0);
+
         public Period(int days, int hours, int minutes, int seconds, int milliseconds)
         {
             if (days < 0)
@@ -93,7 +95,7 @@ namespace Timely
 
         public override string ToString()
         {
-            if (Equals(Empty())) return "Empty";
+            if (Equals(Empty)) return "Empty";
 
             var builder = new StringBuilder();
 
@@ -116,11 +118,6 @@ namespace Timely
         private IStructuralEquatable GetStructuralEquatable()
         {
             return Tuple.Create(Days, Hours, Minutes, Seconds, Milliseconds);
-        }
-
-        public static Period Empty()
-        {
-            return new Period(0, 0, 0, 0, 0);
         }
 
         public TimeSpan ToTimeSpan()

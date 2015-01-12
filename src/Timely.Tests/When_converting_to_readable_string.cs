@@ -57,7 +57,7 @@ namespace Timely.Tests
         [Test]
         public void it_returns_empty_when_everything_is_on_zero()
         {
-            Period emptyPeriod = Period.Empty();
+            Period emptyPeriod = Period.Empty;
 
             emptyPeriod.ToString().ShouldBe("Empty");
         }
