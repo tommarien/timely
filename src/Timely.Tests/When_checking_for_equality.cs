@@ -16,6 +16,15 @@ namespace Timely.Tests
         }
 
         [Test]
+        public void it_behaves_correctly_with_equal_values_complex()
+        {
+            var period1 = new Period(0, 0, 0, 1, 1000);
+            var period2 = 2.Seconds();
+
+            period1.ShouldBe(period2);
+        }
+
+        [Test]
         public void it_is_instance_independent()
         {
             var period1 = 10.Milliseconds();
